@@ -1,0 +1,30 @@
+<p>
+<button routerLink="/course" class="btn btn-primary">back</button>
+</p>
+<section [ngSwitch]="courseName">
+  
+<div class="container" *ngSwitchCase="'Angular'">
+  <h2>Angular Chapters</h2>
+   <ul class="list-group" *ngFor="let angChapter of angularChapters">
+    <li (click)="onAngSelect(angChapter)" class="list-group-item">{{angChapter.name}} <span class="badge">{{angChapter.id}}</span></li>
+  </ul>
+</div>
+<div class="container" *ngSwitchCase="'Node'">
+  <h2>Node Chapters</h2>
+   <ul class="list-group" *ngFor="let nodeChapter of nodeChapters">
+    <li (click)="onNodeSelect(nodeChapter)" class="list-group-item">{{nodeChapter.name}} <span class="badge">{{nodeChapter.id}}</span></li>
+  </ul>
+</div>
+<div class="container" *ngSwitchCase="'VueJs'">
+  <h2>VueJs Chapters</h2>
+   <ul class="list-group" *ngFor="let vueChapter of vueJsChapters">
+    <li class="list-group-item">{{vueChapter.name}} <span class="badge">{{vueChapter.id}}</span></li>
+  </ul>
+</div>
+<div class="container" *ngSwitchCase="'MangoDB'">
+  <h2>MangoDB Chapters</h2>
+   <ul class="list-group" *ngFor="let mangoChapter of MangoDbChapters">
+    <li class="list-group-item">{{mangoChapter.name}} <span class="badge">{{mangoChapter.id}}</span></li>
+  </ul>
+</div>
+</section>

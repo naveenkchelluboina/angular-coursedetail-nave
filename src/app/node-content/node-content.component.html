@@ -1,0 +1,28 @@
+<div class="container-fluid"> 
+  <div class="row">
+    <div class="col-sm-4" style="background-color:lavender;">
+      <h2>Node Topics</h2>
+      <ul class="list-group" *ngFor="let nodeChapter of nodeChapters">
+        <li (click)="onSelect(nodeChapter)" class="list-group-item d-flex justify-content-between align-items-center">{{nodeChapter.name}} <span class="badge badge-primary badge-pill">{{nodeChapter.id}}</span></li>
+      </ul>
+    </div>
+    <div class="col-sm-8">      
+      <h2>Topic {{chapterId}}</h2>
+      <section [ngSwitch]="chapterId">
+        <div *ngSwitchCase="1">
+          <h3>Data Binding in Node</h3>
+          <p>Data binding is a core concept in Angular and allows to define communication between a component and the DOM, making it very easy to define interactive applications without worrying about pushing and pulling data. </p>
+        </div>
+        <div *ngSwitchCase="2">
+          <h3>Routing in Node</h3>
+          <p>The Angular router is a core part of the Angular platform. It enables developers to build Single Page Applications with multiple views and allow navigation between these views. </p>
+        </div>
+        <div *ngSwitchCase="3">
+          <h3>Services in Node</h3>
+          <p>Angular services are singleton objects which get instantiated only once during the lifetime of an application. They contain methods that maintain data throughout the life of an application, i.e. data does not get refreshed and is available all the time. </p>
+        </div>
+
+      </section>
+      </div>
+  </div>
+</div>
